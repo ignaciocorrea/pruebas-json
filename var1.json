@@ -1,0 +1,21 @@
+[
+  {
+    "id": 1, "geometry": {"type": "Point", "coordinates": [10, 10]},
+    "properties": {"color": "blue","price": 150,"address": {"city": "New York"}}
+  }, {
+    "id": 2, "geometry": {"type": "Point", "coordinates": [20, 20]},
+    "properties": {"color": "green","price": 200,"address": {"city": "London"}}
+  }, {
+    "id": 3, "geometry": {"type": "Point", "coordinates": [30, 30]},
+    "properties": {"color": "red","price": 210,"address": {"city": "London"}}
+  }, {
+    "id": 4, "geometry": {"type": "Point", "coordinates": [40, 40]},
+    "properties": {"color": "red","price": 280,"address": {"city": "New York"}}
+  }, {
+    "id": 5, "geometry": {"type": "Point", "coordinates": [50, 50]},
+    "properties": {"color": "green","price": 300,"address": {"city": "New York"}}
+  }, {
+    "id": 6, "geometry": {"type": "Point", "coordinates": [60, 60]},
+    "properties": {"color": "red","price": 360,"address": {"city": "Mumbai"}}
+  }
+]
