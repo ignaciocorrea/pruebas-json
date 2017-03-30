@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="googlebot" content="noindex, nofollow">
+
+  
+  
+
+  
+  
+  
+
+  
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-2.1.0.js"></script>
+
+  
+
+  
+
+  
+
+  
+    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+  
+
+  
+
+  <style type="text/css">
+    ul li {font-weight: bold; margin: 15px 0;}
+ul ul {list-style-type: square;}
+ul ul li {font-weight: normal; color: #333; margin: 5px 15px;}
+  </style>
+
+  <title>grouping JSON data (for loops) by Bhaal</title>
+
+  
+    
+
+
+
+
+<script type='text/javascript'>//<![CDATA[
+$(window).load(function(){
+var data =
+[{name: "Moroni Smith", title: "Editor", boss: "Bob Benson"},
+{name: "Tiancum Jones", title: "Assoc. Editor", boss: "Larry Quinn"},
+{name: "Jacob Reed", title: "Copywriter",  boss: "Jeff Ridley"},
+{name: "Nephi Klein", title: "QA", boss: "Bob Benson"},
+{name: "Enos Richardson", title: "Editor", boss: "Hank Reed"},
+{name: "George Crump", title: "Asst. Manager", boss: "Kyle Levin"},
+{name: "Henry Levens", title: "Assoc. Editor", boss: "Larry Quinn"},
+{name: "Joseph Stephens", title: "Type Setter", boss: "Larry Quinn"},
+{name: "Isaiah Peters", title: "Coffee Maker", boss: "Ralph Baski"},
+{name: "Bill Frisk", title: "Copy Editor", boss: "Kyle Levin"},
+{name: "Fred Maloney", title: "Technical Support", boss: "Jeff Ridley"},
+{name: "Chris Strek", title: "Asst. Manager", boss: "Ralph Baski"},
+{name: "Micah Dean", title: "Type Setter", boss: "Larry Quinn"},
+{name: "Tim White", title: "Technical Support", boss: "Larry Quinn"},
+{name: "Thomas Brown", title: "Technical Support", boss: "Hank Reed"},
+{name: "Zeke Green", title: "Copywriter", boss: "Kyle Levin"},
+{name: "Peter Potter", title: "Copywriter", boss: "Bob Benson"}];
+
+$(document).ready(function() {
+	var categories = {},
+	groupBy = "boss",
+	ul = $('<ul>');
+
+	for (var i = 0; i < data.length; i++) {
+		if (!categories[data[i][groupBy]])
+			categories[data[i][groupBy]] = [];
+		categories[data[i][groupBy]].push(data[i]);
+	};
+
+	for (key in categories) {
+		if (categories.hasOwnProperty(key)) {
+			var li = $('<li>').text('Manager: ' + key);
+			if (categories[key].length){
+				var ul_inner = $('<ul>');
+				for (var i = 0; i < categories[key].length; i++) {
+					$('<li>').html(categories[key][i].name + ', ' + categories[key][i].title).appendTo(ul_inner);
+				}
+				li.append(ul_inner);
+			}
+			li.appendTo(ul);
+		}
+	}
+	ul.appendTo('body');
+});
+});//]]> 
+
+</script>
+
+  
+</head>
+
+<body>
+  <h1>group by manager</h1>
+  
+  <script>
+  // tell the embed parent frame the height of the content
+  if (window.parent && window.parent.parent){
+    window.parent.parent.postMessage(["resultsFrame", {
+      height: document.body.getBoundingClientRect().height,
+      slug: "3v5y85uf"
+    }], "*")
+  }
+</script>
+
+</body>
+
+</html>
